@@ -37,13 +37,13 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
                 <th scope="col">Celular</th>
-                <th scope="auto"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @if (Model != null && Model.Any())
             {
-                foreach (ContatoModel contato in Model)
+                foreach (var contato in Model)
                 {
                     <tr>
                         <th scope="row">@contato.Id</th>
@@ -58,6 +58,10 @@
                         </td>
                     </tr>
                 }
+            }
+            else
+            {
+                <tr class="odd"><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>
             }
         </tbody>
     </table>

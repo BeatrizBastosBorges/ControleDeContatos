@@ -31,13 +31,13 @@ namespace ControleDeContatos.Controllers
 
         public IActionResult Editar(int id)
         {
-            ContatoModel contato = _contatoRepositorio.ListarPorId(id);
+            ContatoModel contato = _contatoRepositorio.BuscarPorId(id);
             return View(contato);
         }
 
         public IActionResult ApagarConfirmacao(int id)
         {
-            ContatoModel contato = _contatoRepositorio.ListarPorId(id);
+            ContatoModel contato = _contatoRepositorio.BuscarPorId(id);
             return View(contato);
         }
 
@@ -87,7 +87,7 @@ namespace ControleDeContatos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Alterar(ContatoModel contato)
+        public IActionResult Editar(ContatoModel contato)
         {
             try
             {
@@ -97,7 +97,7 @@ namespace ControleDeContatos.Controllers
                     TempData["MensagemSucesso"] = "Contato alterado com sucesso!";
                     return RedirectToAction("Index");
                 }
-                return View("Editar", contato);
+                return View(contato);
             }
             catch (System.Exception erro)
             {

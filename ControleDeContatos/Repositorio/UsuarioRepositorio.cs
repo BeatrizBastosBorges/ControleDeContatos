@@ -15,7 +15,7 @@ namespace ControleDeContatos.Repositorio
             _bancoContext = bancoContext;
         }
 
-        public UsuarioModel ListarPorId(int id)
+        public UsuarioModel BuscarPorId(int id)
         {
             return _bancoContext.Usuarios.FirstOrDefault(x => x.Id == id);
         }
@@ -36,7 +36,7 @@ namespace ControleDeContatos.Repositorio
 
         public UsuarioModel Atualizar(UsuarioModel usuario)
         {
-            UsuarioModel usuarioDB = ListarPorId(usuario.Id);
+            UsuarioModel usuarioDB = BuscarPorId(usuario.Id);
 
             if (usuarioDB == null) throw new System.Exception("Houve um erro na atualização do usuário!");
 
@@ -54,7 +54,7 @@ namespace ControleDeContatos.Repositorio
 
         public bool Apagar(int id)
         {
-            UsuarioModel usuarioDB = ListarPorId(id);
+            UsuarioModel usuarioDB = BuscarPorId(id);
 
             if (usuarioDB == null) throw new System.Exception("Houve um erro na deleção do usuário!");
 

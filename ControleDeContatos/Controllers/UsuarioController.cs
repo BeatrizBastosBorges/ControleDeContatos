@@ -3,8 +3,6 @@ using ControleDeContatos.Repositorio;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace ControleDeContatos.Controllers
 {
@@ -109,7 +107,7 @@ namespace ControleDeContatos.Controllers
                 }
                 return View(usuario);
             }
-            catch (System.Exception erro)
+            catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não consegumos atualizar seu usuário, tente novamente, detalhes do erro: {erro.Message}";
                 return RedirectToAction("Index");

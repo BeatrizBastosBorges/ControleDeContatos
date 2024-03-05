@@ -3,7 +3,6 @@ using ControleDeContatos.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ControleDeContatos.Repositorio
 {
@@ -31,6 +30,7 @@ namespace ControleDeContatos.Repositorio
         {
             // grava no banco de dados
             usuario.DataCadastro = DateTime.Now;
+            usuario.SetSenhaHash();
 
             _bancoContext.Usuarios.Add(usuario);
             _bancoContext.SaveChanges();

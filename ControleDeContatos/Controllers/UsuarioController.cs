@@ -80,7 +80,7 @@ namespace ControleDeContatos.Controllers
             }
             catch (System.Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, não consegumos cadastrar seu usuário, tente novamente, detalhes do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não conseguimos cadastrar seu usuário, tente novamente, detalhes do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }
@@ -111,7 +111,7 @@ namespace ControleDeContatos.Controllers
             }
             catch (Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, não consegumos atualizar seu usuário, tente novamente, detalhes do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não conseguimos atualizar seu usuário, tente novamente, detalhes do erro: {erro.Message}";
                 return RedirectToAction("Index");
             }
         }

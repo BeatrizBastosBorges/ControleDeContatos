@@ -87,9 +87,9 @@ namespace ControleDeContatos.Controllers
                     if (usuario != null)
                     {
                         string novaSenha = usuario.GerarNovaSenha();                        
-                        string menssagem = $"Sua nova senha é: {novaSenha}";
+                        string mensagem = $"Sua nova senha é: {novaSenha}";
 
-                        bool emailEnviado = _email.Enviar(usuario.Email, "Sistema de Contatos - Nova Senha", menssagem);
+                        bool emailEnviado = _email.Enviar(usuario.Email, "Sistema de Contatos - Nova Senha", mensagem);
 
                         if (emailEnviado)
                         {

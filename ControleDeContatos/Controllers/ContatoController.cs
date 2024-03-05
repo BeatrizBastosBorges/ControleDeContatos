@@ -2,9 +2,11 @@
 using ControleDeContatos.Models;
 using System.Collections.Generic;
 using ControleDeContatos.Repositorio;
+using ControleDeContatos.Fillters;
 
 namespace ControleDeContatos.Controllers
 {
+    [PaginaParaUsuarioLogado]
     public class ContatoController : Controller
     {
         private readonly IContatoRepositorio _contatoRepositorio;

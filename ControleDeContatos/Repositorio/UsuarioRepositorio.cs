@@ -3,6 +3,7 @@ using ControleDeContatos.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleDeContatos.Repositorio
 {
@@ -30,7 +31,9 @@ namespace ControleDeContatos.Repositorio
         }
         public List<UsuarioModel> BuscarTodos()
         {
-            return _bancoContext.Usuarios.ToList();
+            return _bancoContext.Usuarios
+                .Include(x => x.Contatos)
+                .ToList();
         }
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
